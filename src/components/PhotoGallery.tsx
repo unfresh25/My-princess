@@ -64,7 +64,7 @@ const PhotoGallery = () => {
           Nuestro viaje
         </h2>
         <p className="text-gray-500 text-base max-w-2xl mx-auto leading-relaxed">
-          Cada momento capturado cuenta una historia de amor, risas y alegría sin fin
+          Deseo que cada momento que pase contigo sea eterno, que cada sonrisa que me brindes sea eterna, que cada momento que pasemos juntos sea eterno.
         </p>
       </div>
 
