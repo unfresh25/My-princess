@@ -42,7 +42,7 @@ const PhotoGallery = () => {
         entries.forEach((entry) => {
           if (entry.isIntersecting) {
             const photoId = parseInt(entry.target.getAttribute('data-photo-id') || '0');
-            setVisiblePhotos(prev => 
+            setVisiblePhotos(prev =>
               prev.includes(photoId) ? prev : [...prev, photoId]
             );
           }
@@ -73,24 +73,26 @@ const PhotoGallery = () => {
           <div
             key={photo.id}
             data-photo-id={photo.id}
-            className={`photo-item flex flex-col md:flex-row items-center gap-12 ${
-              index % 2 === 0 ? 'md:flex-row' : 'md:flex-row-reverse'
-            } transition-all duration-1000 transform ${
-              visiblePhotos.includes(photo.id) 
-                ? 'opacity-100 translate-y-0' 
+            className={`photo-item flex flex-col md:flex-row items-center gap-12 ${index % 2 === 0 ? 'md:flex-row' : 'md:flex-row-reverse'
+              } transition-all duration-1000 transform ${visiblePhotos.includes(photo.id)
+                ? 'opacity-100 translate-y-0'
                 : 'opacity-0 translate-y-10'
-            }`}
+              }`}
           >
             <div className="flex-1">
               <div className="relative group">
-                <img
-                  src={photo.url}
-                  alt={`Memory ${photo.id}`}
-                  className="relative w-full h-auto max-h-80 object-cover rounded-lg shadow-lg transform group-hover:scale-102 transition-transform duration-500"
-                />
+                <div className="relative group">
+                  <div className="aspect-w-4 aspect-h-3 rounded-lg overflow-hidden shadow-lg">
+                    <img
+                      src={photo.url}
+                      alt={`Memory ${photo.id}`}
+                      className="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-500"
+                    />
+                  </div>
+                </div>
               </div>
             </div>
-            
+
             <div className="flex-1 text-center md:text-left">
               <div className="relative max-w-md mx-auto md:mx-0">
                 <p className="text-base md:text-lg text-gray-600 leading-relaxed font-light italic">
